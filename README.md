@@ -333,16 +333,17 @@ sync ; umount boot root
 ```
 
 
-## 3. finally result, debian-jessie-armhf_rpi23.tar.gz
-if you want to use my own build, download `debian-jessie-armhf_rpi23.tar.gz` from here and do the following instuctions. the default password is `1234`
+## 3. get my own debian-jessie-armhf_rpi23.tar.gz
+download `debian-jessie-armhf_rpi23.tar.gz_*` from here and do the following instuctions. the default password is `1234`
 
+#### switch to RPi file system
 ```
 mkdir root
 mount /dev/sdb2 root
 mkdir root/boot
 mount /dev/sdb1 root/boot
 cd root
-bsdtar -xpf debian-jessie-armhf_rpi23.tar.gz -C .
+cat debian-jessie-armhf_rpi23.tar.gz_a* | tar -zxvp
 sync ; umount root/boot ; umount root
 ```
 
